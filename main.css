@@ -36,6 +36,14 @@ h4{
   color: #7c7c7c;
 }
 
+h5{
+  font-size: 15px;
+  line-height: 200%;
+}
+
+p{
+  line-height: 200%;
+}
 /* ----------Responsive for col ----------- */
 .row::after {
   content: "";
@@ -213,6 +221,8 @@ footer {
   margin: 0;
   background-color: #343434;
   color: whitesmoke;
+  text-align: left;
+  padding: 10px;
 }
 
 footer a{
@@ -220,11 +230,25 @@ footer a{
   text-decoration: none;
 }
 
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  footer .field{
+    padding: 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  footer .field{
+    padding: 0px 30px 0px 60px;
+  }
+}
+
 /* PROFILE */
 .profile{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
   margin-bottom: 25px;
 }
 

@@ -5,10 +5,10 @@
         <link rel="stylesheet" href="main.css" />
         <link rel="icon" href="picture/logo-JNAH.PNG">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/3a7f96f49f.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
-
         <!-- NAVBAR -->
         <nav id="main-nav">
             <div class="row">
@@ -17,11 +17,12 @@
                         <a href="home.html"><img src="picture/logo.PNG" alt="logo"></a>
                     </div>
 
-                    <ul class="nav-menu list-unstyled">
+                    <ul class="nav-menu" style="list-style-type:none;">
                         <li><a href="home.html">Home</a></li>
-                        <li><a href="product.html">Product</a></li>
-                        <li><a href="form.html">Form</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#">Order</a></li>
                         <li><a href="#about-us">About Us</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,12 +37,13 @@
             </div>
         </section>
 
+        <div class="container">
             <!-- PRODUCT -->
-            <section class="wrapper">
+            <section class="wrapper" id="products">
                 <div class="inner">
                     <header class="product-list">
                         <h2>List of Products</h2>
-                        <p>Here is your choice</p>
+                        <h4>Here is your choice</h4>
                     </header>
 
                     <!-- Product List -->
@@ -125,14 +127,14 @@
             </section>
 
             <!-- ABOUT US -->
-            <section>
+            <section  id = "about-us">
                 <div class="about-us">
                     <div class="row">
                         <div class="col-8 col-s-8">
                             <img src="./picture/about-us.jpg" width="460" height="345">
                         </div>
                         <div class="col-4 col-s-4">
-                            <h1> About us</h1>
+                            <h2> About us</h2>
                             <h3> Description</h3>
                         </div>
                     </div>
@@ -140,33 +142,47 @@
             </section>
 
             <!-- LEADERSHIP -->
-            <section id = "about-us">
+            <section>
                 <div class="leadership">
                     <div class="row">
-                        <div class="col-12 col-s-12">
-                            <h1>Leadership</h1>
-                        </div>
+                        <h2>Leadership</h2>
                     </div>
                     <div class="row">
                         <div class="col-3 col-s-6">
-                            <h3> Anh Nguyen</h3>
-                            <h4> 49209878 </h4>
-                            <img src="./picture/profile.png" width="460" height="345">
+                            <div class="profile">
+                                <img src="./picture/profile.png">
+                                <div class="info">
+                                    <h3> Anh Nguyen</h3>
+                                    <h4> 49209878 </h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-3 col-s-6">
-                            <h3> Nha Vuong</h3>
-                            <h4> 49209878 </h4>
-                            <img src="./picture/profile.png" width="460" height="345">
+                            <div class="profile">
+                                <img src="./picture/profile.png">
+                                <div class="info">
+                                    <h3> Nha Vuong</h3>
+                                    <h4> 49209878 </h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-3 col-s-6">
-                            <h3> Jonathan Tran </h3>
-                            <h4> 49209878 </h4>
-                            <img src="./picture/profile.png" width="460" height="345">
+                            <div class="profile">
+                                <img src="./picture/profile.png">
+                                <div class="info">
+                                    <h3> Jonathan Tran </h3>
+                                    <h4> 49209878 </h4>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-3 col-s-6">
-                            <h3> Huy Luong </h3>
-                            <h4> 49209878 </h4>
-                            <img src="./picture/profile.png" width="460" height="345">
+                            <div class="profile">
+                                <img src="./picture/profile.png">
+                                <div class="info">
+                                    <h3> Huy Luong </h3>
+                                    <h4> 49209878 </h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,20 +190,27 @@
         </div>
         
         <!-- FOOTER -->
-        <footer>
+        <footer id="contact-us">
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <h3> ABOUT US </h3>
                     <p> Description</p>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <h3> QUICK LINKS</h3>
-                    <h6> Products</h6>
-                    <h6> About us </h6>
+                    <h5><a href="#products"> Products </a></h5>
+                    <h5><a href="#about-us"> About us </a></h5>
+                </div>
+                <div class="col-4">
+                    <h3> CONTACT US </h3>
+                    <h5> <i class="fas fa-door-open"></i> Open Daily: 9am-9pm</h5>
+                    <h5> <i class="fas fa-map-marked-alt"></i> 123456 Bison, Irvine, CA 92697</h5>
+                    <h5> <i class="fas fa-phone"></i> Phone number: 714-999-9999</h5>
+                    <h5> <i class="fas fa-envelope"></i> Email: jnahgroup@gmail.com</h5>
                 </div>
             </div>
             <div class="row">
-                <p>Copyright ©2020 All rights reserved | This page is made by JNAH Group</p>
+                <p>Copyright ©2020 All rights reserved | This page is made by JNAH</p>
             </div>
         </footer>
 

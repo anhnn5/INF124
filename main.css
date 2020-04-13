@@ -10,8 +10,32 @@ html, body {
 }
 
 .container{
-  margin: 0 40px 0;
+  margin: 0 60px 0;
 }
+
+h1{
+  font-size: 50px;
+}
+
+h2{
+  font-size: 30px;
+}
+
+h3{
+  font-size: 25px;
+  font-style: oblique;
+  font-weight: lighter;
+}
+
+h3 a{
+  color: rgb(236, 86, 86);
+}
+
+h4{
+  font-size: 20px;
+  color: #7c7c7c;
+}
+
 /* ----------Responsive for col ----------- */
 .row::after {
   content: "";
@@ -101,6 +125,10 @@ nav {
     letter-spacing: 0.02em;
   }
 
+  nav ul li a:hover {
+    color: rgb(236, 86, 86);
+  }
+
 .logo {
     float: left;
     color: black;
@@ -183,12 +211,35 @@ footer {
   width: 100%;
   text-align: center;
   margin: 0;
-  background-color: rgb(145, 145, 145);
+  background-color: #343434;
+  color: whitesmoke;
+}
+
+footer a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+/* PROFILE */
+.profile{
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+
+.info{
+  text-align: center;
+  padding: 10px 20px;
 }
 
 /* ABOUT-US */
-
+.about-us{
+  padding: 10px;
+}
 /* LEADERSHIP */
-
-
+.leadership{
+  padding: 10px;
+}
 

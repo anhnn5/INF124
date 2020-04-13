@@ -38,7 +38,6 @@ h4{
 
 h5{
   font-size: 15px;
-  line-height: 200%;
 }
 
 p{
@@ -222,7 +221,7 @@ footer {
   background-color: #343434;
   color: whitesmoke;
   text-align: left;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
 }
 
 footer a{
@@ -240,7 +239,7 @@ footer a{
 @media only screen and (min-width: 768px) {
   /* For desktop: */
   footer .field{
-    padding: 0px 30px 0px 60px;
+    padding: 0px 0px 0px 60px;
   }
 }
 
@@ -262,6 +261,7 @@ footer a{
 .about-us{
   padding: 10px;
 }
+
 /* LEADERSHIP */
 .leadership{
   padding: 10px;

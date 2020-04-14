@@ -130,10 +130,12 @@ nav {
     font-weight: 500;
     line-height: 16px;
     letter-spacing: 0.02em;
+    text-decoration: none;
   }
 
   nav ul li a:hover {
     color: rgb(236, 86, 86);
+    text-decoration: underline;
   }
 
 .logo {
@@ -208,7 +210,18 @@ header.product-list p {
     -moz-align-items: -moz-stretch;
     -webkit-align-items: -webkit-stretch;
     -ms-align-items: -ms-stretch;
-    align-items: stretch; }
+    align-items: stretch;
+   }
+
+  .card a{
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  .card a:hover{
+    text-decoration: underline;
+    font-style: oblique;
+  }
 
 
 /* FOOTER */
@@ -218,15 +231,25 @@ footer {
   width: 100%;
   text-align: center;
   margin: 0;
-  background-color: #343434;
-  color: whitesmoke;
+  /* background-color: #343434;
+  color: whitesmoke; */
   text-align: left;
-  padding: 10px 10px 0px 10px;
+  /* padding: 10px 10px 0px 10px; */
+
+  background: #16222A; 
+  background: -webkit-linear-gradient(59deg, #3A6073, #16222A); 
+  background: linear-gradient(59deg, #3A6073, #16222A);
+  color: whitesmoke;
 }
 
 footer a{
   color: whitesmoke;
   text-decoration: none;
+}
+
+footer .field a:hover{
+  color: rgb(236, 86, 86);
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 600px) {
@@ -255,6 +278,16 @@ footer a{
 .info{
   text-align: center;
   padding: 10px 20px;
+}
+
+.info a{
+  color: grey;
+  text-decoration: none;
+}
+
+.info a:hover {
+  color: rgb(236, 86, 86);
+  text-decoration: underline;
 }
 
 /* ABOUT-US */

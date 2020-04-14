@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="main.css" />
         <link rel="icon" href="picture/logo-JNAH.PNG">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="main.js"></script>
     </head>
 
     <body>
@@ -17,17 +17,25 @@
                         <a href="home.html"><img src="picture/logo.PNG" alt="logo"></a>
                     </div>
 
-                    <ul class="nav-menu" style="list-style-type:none;">
+                    <ul class="nav-menu" style="list-style-type:none;" id="navbar">
                         <li><a href="#">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="form.html">Order</a></li>
                         <li><a href="#about-us">About Us</a></li>
                         <li><a href="#contact-us">Contact Us</a></li>
+                        <li> <a href="javascript:void(0);" class="icon" onclick="navbar()">
+                            <i class="fa fa-bars"></i> </a></li>
                     </ul>
                 </div>
             </div>
+            <div id="toggle" class="toggle-menu" style="list-style-type:none;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="form.html">Order</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </div>
         </nav>
-
         <!-- BANNER-->
         <section id="banner">
             <div class="inner">
@@ -181,7 +189,7 @@
                                 <div class="info">
                                     <h3><span style="font-size: 50px;">A</span>nh Nguyen </h3>
                                     <h4> Senior Software Engineering </h4>
-                                    <h5><i class="fas fa-graduation-cap"></i> Student ID </h5>
+                                    <h5><i class="fas fa-graduation-cap"></i> 49209878 </h5>
                                     <a href = "mailto: anhnn5@uci.edu"><i class="fas fa-envelope"></i> anhnn5@uci.edu</a>
                                 </div>
                             </div>

@@ -347,6 +347,10 @@ footer .field a:hover{
   .profile h4{
     font-size: 18px;
   }
+
+  .profile a{
+    font-size: 14px;
+  }
 }
 
 /* ABOUT-US */

@@ -223,6 +223,16 @@ header.product-list p {
     font-style: oblique;
   }
 
+  .thumbnail {
+    padding: 10px;
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+  }
+
+  .thumbnail:hover {
+    transform: scale(1.2);
+}
+
 
 /* FOOTER */
 footer {

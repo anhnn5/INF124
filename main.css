@@ -133,7 +133,7 @@ nav {
     text-decoration: none;
   }
 
-  nav ul li a:hover, nav ul li a:active, nav ul li a:focus {
+  nav ul li a:hover, nav ul li a.active, nav ul li a:focus {
     color: rgb(236, 86, 86);
     text-decoration: underline;
   }

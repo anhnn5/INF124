@@ -100,28 +100,6 @@
     }
   ];
 
-  function navbar() {
-    var x = document.getElementById("toggle");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-  
-  window.addEventListener("click", function (e) {
-    if (!event.target.closest(".nav-icon")) {
-      var x = document.getElementById("toggle");
-      if (x.style.display === "block") {
-        x.style.display = "none";
-      }
-      return;
-    } else {
-      // Clicked toggle-button
-      return;
-    }
-  });
-
   function initItems() {
     var list = document.getElementById("listOfItem");
 
@@ -135,7 +113,9 @@
       iDiv.appendChild(link)
 
       var image = document.createElement('img');
+      image.className = "thumbnail";
       image.src = "picture/" + element.imgHref;
+      image.style = "width:300px;height:350px;";
       link.appendChild(image)
 
       var title = document.createElement('h3');

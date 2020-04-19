@@ -1,6 +1,5 @@
 (function () {
-
-  var itemList = 
+    var itemList = 
     [
       {
         "id": 1,
@@ -8,7 +7,7 @@
         "description": "Straight-cut Blazer",
         "imgHref": "./blazer.jfif",
         "price": "33.99",
-        "quantity": 10
+        "quantity": "10"
       },
       {
         "id": 2,
@@ -16,7 +15,7 @@
         "description": "Wide-cut Blouse",
         "imgHref": "./blouse.jfif",
         "price": "14.99",
-        "quantity": 7
+        "quantity": "7"
       },
       {
         "id": 3,
@@ -24,7 +23,7 @@
         "description": "Tie-back Top",
         "imgHref": "./croptop.jfif",
         "price": "10.99",
-        "quantity": 8
+        "quantity": "8"
       },
       {
         "id": 4,
@@ -32,7 +31,7 @@
         "description": "Short Denim Dress",
         "imgHref": "./dress.jfif",
         "price": "89.99",
-        "quantity":3
+        "quantity": "3"
       },
       {
         "id": 5,
@@ -40,7 +39,7 @@
         "description": "Pullover Hoodie",
         "imgHref": "./hoodie.jfif",
         "price": "49.99",
-        "quantity": 5
+        "quantity": "5"
       },
       {
         "id": 6,
@@ -48,7 +47,7 @@
         "description": "Distressed Denim Jean Jacket",
         "imgHref": "./jacket.jfif",
         "price": "99.99",
-        "quantity": 24
+        "quantity": "24"
       },
       {
         "id": 7,
@@ -56,7 +55,7 @@
         "description": "Fashion Jean",
         "imgHref": "./jean.jfif",
         "price": "39.99",
-        "quantity": 15
+        "quantity": "15"
       },
       {
         "id": 8,
@@ -64,7 +63,7 @@
         "description": "Paper-bag Pant",
         "imgHref": "./pant.jfif",
         "price": "29.99",
-        "quantity": 10
+        "quantity": "10"
       },
       {
         "id": 9,
@@ -72,7 +71,7 @@
         "description": "Soft Scarf",
         "imgHref": "./scarf.jfif",
         "price": "9.99",
-        "quantity": 12
+        "quantity": "12"
       },
       {
         "id": 10,
@@ -80,7 +79,7 @@
         "description": "Sweater with Dolman Sleeves",
         "imgHref": "./sweater.jfif",
         "price": "3.99",
-        "quantity": 10
+        "quantity": "10"
       },
       {
         "id": 11,
@@ -88,7 +87,7 @@
         "description": "T-shirt in soft jersey",
         "imgHref": "./tshirt.jfif",
         "price": "18.99",
-        "quantity": 12
+        "quantity": "12"
       },
       {
         "id": 12,
@@ -96,54 +95,21 @@
         "description": "Short Jersey Skirt",
         "imgHref": "./skirt.jfif",
         "price": "27.99",
-        "quantity": 20
+        "quantity": "20"
       }
     ];
 
-  function initItems() {
-    var list = document.getElementById("listOfItem");
-
-    itemList.forEach(element => {
-      var iDiv = document.createElement('div');
-      iDiv.className = 'col-4 col-s-6';
-      iDiv.id = element.id;
-      list.appendChild(iDiv);
-
-      var link = document.createElement('a');
-      link.href = 'product.html';
-      iDiv.appendChild(link)
-      link.addEventListener('click', function() { 
-          localStorage.setItem('product', JSON.stringify(element))
-      }, false);
-
-      var image = document.createElement('img');
-      image.className = "thumbnail";
-      image.src = "picture/" + element.imgHref;
-      image.style = "width:300px;height:350px;";
-      link.appendChild(image)
-
-      var title = document.createElement('h3');
-      iDiv.appendChild(title)
-
-      var link2 = document.createElement('a');
-      link2.href = 'product.html';
-      link2.appendChild(document.createTextNode(element.name))
-      title.appendChild(link2)
-      link2.addEventListener('click', function() { 
-          localStorage.setItem('product', JSON.stringify(element))
-      }, false);
-
-      var desc = document.createElement('p')
-      desc.appendChild(document.createTextNode(element.description))
-      iDiv.appendChild(desc)
-    });
-  }
+function  initItems(){
+  var productData = JSON.parse(localStorage.getItem('productData'));
+  console.log(productData);
   
+}
+
   document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-      initItems();
+    if (document.readyState === 'complete') {        
+        initItems();        
     }
   };
 
-})();
-
+  })();
+  

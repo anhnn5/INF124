@@ -368,5 +368,42 @@ footer .field a:hover{
   }
 }
 
+/*PRODUCT*/
+.product {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+.grid {       
+  padding: 1rem;
+  height: 4rem;
+}
+
+@media (min-width: 400px) {
+  .product { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .product { grid-template-columns: repeat(2, 1fr); }
+}
+
+.right{
+    text-align: left;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 
 

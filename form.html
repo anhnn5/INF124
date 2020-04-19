@@ -10,12 +10,46 @@
         <script src="js/form.js"></script>
     </head>
     <body>
-        <section id="banner">
-            <div class="inner">
-                <h1>WELCOME TO JNAH</h1>
-                <h3>Let we make your style</h3>
+         <!-- NAVBAR -->
+         <nav id="main-nav">
+            <div class="row">
+                <div class="container">
+                    <div class="logo">
+                        <a href="home.html"><img src="picture/logo.PNG" alt="logo"></a>
+                    </div>
+
+                    <ul class="nav-menu" style="list-style-type:none;" id="navbar">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="form.html">Order</a></li>
+                        <li><a href="home.html#about-us">About Us</a></li>
+                        <li><a href="home.html#contact-us">Contact Us</a></li>
+                        <li> <a href="javascript:void(0);" class="nav-icon" onclick="navbar()">
+                            <i class="fa fa-bars"></i> </a></li>
+                    </ul>
+                </div>
             </div>
-        </section>    
+            <div id="toggle" class="toggle-menu" style="list-style-type:none;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="form.html">Order</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </div>
+        </nav>
+
+        <!-- ORDER FORM -->
+        <div class="container">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="form_order">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
     <!-- FOOTER -->
         <footer id="contact-us">
             <div class="row">
@@ -30,8 +64,8 @@
                 <div class="col-3 col-s-3">
                     <div class="field">
                         <h4>QUICK LINKS</h4>
-                        <h5><a href="#products"> Products </a></h5>
-                        <h5><a href="#about-us"> About us </a></h5>
+                        <h5><a href="home.html#products"> Products </a></h5>
+                        <h5><a href="home.html#about-us"> About us </a></h5>
                     </div>
                 </div>
                 <div class="col-4 col-s-4">

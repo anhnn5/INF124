@@ -289,6 +289,7 @@ footer {
   background: -webkit-linear-gradient(59deg, #3A6073, #16222A); 
   background: linear-gradient(59deg, #3A6073, #16222A);
   color: whitesmoke;
+  position: relative;
 }
 
 footer a{
@@ -374,6 +375,8 @@ footer .field a:hover{
   margin: 0 auto;
   display: grid;
   grid-gap: 1rem;
+  padding-bottom: 400px;
+  padding-top: 100px;
 }
 .grid {       
   padding: 1rem;
@@ -393,17 +396,61 @@ footer .field a:hover{
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: rgb(236, 86, 86);
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 12px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 
+/*FORM*/
+.form_order{
+  text-align:center;
+border:1px solid #ccc;
+width:300px;
 
+margin-top:20px;
+box-shadow:0 0 15px;
+border-radius:6px;
+float:left;
+
+}
+
+label{
+  float:left;
+  font-size:16px
+  }
+  input[type="text"]{
+  width:100%;
+  margin-top:10px;
+  height:35px;
+  margin-bottom:25px;
+  padding:10px;
+  border:3px solid #2BC1F2
+  }
+  textarea{
+  width:100%;
+  border:3px solid #2BC1F2;
+  padding:10px;
+  margin-bottom:25px;
+  margin-top:10px;
+  height:100px;
+  resize:none
+  }
+  input[type="submit"]{
+  width:100%;
+  padding:10px 45px;
+  background-color:#2BC1F2;
+  border:none;
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  font-family:'Ubuntu',sans-serif
+  }

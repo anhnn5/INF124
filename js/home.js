@@ -106,11 +106,15 @@
     itemList.forEach(element => {
       var iDiv = document.createElement('div');
       iDiv.className = 'col-4 col-s-6';
+      iDiv.id = element.id;
       list.appendChild(iDiv);
 
       var link = document.createElement('a');
-      link.href = '#';
+      link.href = 'product.html';
       iDiv.appendChild(link)
+      link.addEventListener('click', function() { 
+          localStorage.setItem('product', JSON.stringify(element))
+      }, false);
 
       var image = document.createElement('img');
       image.className = "thumbnail";
@@ -122,9 +126,12 @@
       iDiv.appendChild(title)
 
       var link2 = document.createElement('a');
-      link2.href = '#';
+      link2.href = 'product.html';
       link2.appendChild(document.createTextNode(element.name))
       title.appendChild(link2)
+      link2.addEventListener('click', function() { 
+          localStorage.setItem('product', JSON.stringify(element))
+      }, false);
 
       var desc = document.createElement('p')
       desc.appendChild(document.createTextNode(element.description))
@@ -139,3 +146,4 @@
   };
 
 })();
+

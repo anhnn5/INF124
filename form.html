@@ -39,30 +39,18 @@
         </nav>
 
         <!-- ORDER FORM -->
-        <div class="container wrapper">
+        <div class="container wrapper" style="text-align: left;">
             <div class="row">
-                <div class="col-4">
-                    <div class="card" id="sumary">
-                        <div class="card title">
+                    <div class="card col-12" id="sumary">
+                        <div class="card-title">
                             <h2>Sumary</h2>
-                            <ul class="list-sumary">
-                                <li class="list-sumary-item">
-                                    <div>
-                                        <p><strong>Items added: </strong>{{sumary.item}}</p>
-                                        <small>{{sumary.quality}}</small>
-                                    </div>
-                                    <span>{{item.price}}</span>
-                                </li>
-                                <li class="list-sumary-item">
-                                    <p><strong>Shipping: </strong>{{shippingMethod.name}}</p>
-                                </li>
-                                <li class="list-sumary-item">
-                                    <p><strong>Total: </strong>${{total}}</p>
-                                </li>
-                            </ul>
+                            <p><strong>Items added: </strong>{{sumary.item}}</p>
+                            <small>{{sumary.quality}}</small>
+                            <span>{{item.price}}</span>
+                            <p><strong>Shipping: </strong>{{shippingMethod.name}}</p>
+                            <p><strong>Total: </strong>${{total}}</p>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
 

@@ -2,18 +2,24 @@
 /*FORM*/
 .wrapper{
   background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    /* border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18); */
     width:360px;
     max-width: 100%;
     margin:0;
     float:right;
+    
 }
+.card-title h2{
+  text-align: center;
+  color:  rgb(236, 86, 86);
+  padding-top: 30px;
 
+}
 .form-container{
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    /* border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18); */
     width: 720px;
     max-width: 100%;
     margin-right: 50px;
@@ -35,7 +41,7 @@
       text-align: center;
       color:  rgb(236, 86, 86);
     }
-    }
+    
     
     .form{
       padding: 30px 40px;

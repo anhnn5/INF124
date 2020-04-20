@@ -32,12 +32,19 @@ function  initItems(){
   right[0].appendChild(inputDiv);
 
   var inputDiv1 = document.getElementsByClassName("inputDiv");
+  var quantityField = document.createElement('h5');
+  quantityField.textContent = "Quantity: ";
+  inputDiv1[0].appendChild(quantityField);
+
   var quantityInput = document.createElement('input');
   quantityInput.type = "number";
   quantityInput.id = "number";
   quantityInput.defaultValue = "1";
   inputDiv1[0].appendChild(quantityInput);
   
+  var newLine = document.createElement("br");
+  right[0].appendChild(newLine);  
+
   //Create button
   var button = document.createElement('button');
   button.type = "button";

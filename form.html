@@ -44,11 +44,11 @@
                     <div class="card col-12" id="sumary">
                         <div class="card-title">
                             <h2>Sumary</h2>
-                            <p><strong>Items added: </strong>{{sumary.item}}</p>
-                            <small>{{sumary.quality}}</small>
-                            <span>{{item.price}}</span>
-                            <p><strong>Shipping: </strong>{{shippingMethod.name}}</p>
-                            <p><strong>Total: </strong>${{total}}</p>
+                            <p><strong>Items added: </strong><span id="itemName"></span></p>
+                            <p><strong>Quantity: </strong><span id="itemQuantity"></span></p>
+                            <p><strong>Price: </strong><span id="itemPrice"></span></p>
+                            <p><strong>Shipping: </strong><span id="shippingMethod"></span></p>
+                            <p><strong>Total: </strong><span id="total"></span></p>
                         </div>
                     </div>
             </div>
@@ -78,35 +78,42 @@
                         </div>  
                         <div class="col-12 form-control">
                             <label for="phone">Phone Number</label>
-                            <input id="phone" type="number" placeholder="xxx xxx xxxx" name="phone">
+                            <input id="phone" type="number" placeholder="xxx-xxx-xxxx" name="phone">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="col-12 form-control">
+                            <label for="email">Email</label>
+                            <input id="email" type="text" placeholder="abc@abc.com" name="email">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="col-12 form-control">
                             <label for="address">Shipping Address</label>
-                            <input id="address" type="text" placeholder="Your address" name="address">
+                            <input id="address" type="text" placeholder="Ex: 123 Bison Ave" name="address">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="col-6 form-control">
                             <label for="city">City</label>
-                            <input id="city" type="text" placeholder="Your city" name="city">
+                            <input id="city" type="text" placeholder="Ex: Irvine" name="city">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="col-3 form-control">
                             <label for="state">State</label>
-                            <input id="state" type="text" placeholder="Your state" name="state">
+                            <input id="state" type="text" placeholder="Ex: CA" name="state">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="col-3 form-control">
                             <label for="zipcode">Zip Code</label>
-                            <input id="zipcode" type="number" placeholder="xxxxx" name="zipcode">
+                            <input id="zipcode" type="number" placeholder="Ex: 92626" name="zipcode">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
@@ -115,10 +122,10 @@
                         <div class="col-12 form-control">
                             <label>Shipping Method</label>
                             <div class="option">
-                                <select id="option" class="shipping-option">
-                                    <option>6 Days Ground - $5</option>
-                                    <option>2 Days Expedited - $10</option>
-                                    <option>Overnight - $30</option>
+                                <select id="option" class="shipping-option" onchange="getShippingPrice()">
+                                    <option value="5">6 Days Ground - $5</option>
+                                    <option value="10">2 Days Expedited - $10</option>
+                                    <option value="30">Overnight - $30</option>
                                 </select>
                             </div>
                         </div>
@@ -136,7 +143,7 @@
                             </div>
                             <div class="col-12 form-control">
                                 <label for="cardNo">Card Number</label>
-                                <input id="cardNo" type="number" placeholder="xxxx xxxx xxxx xxxx" name="cardNo">
+                                <input id="cardNo" type="number" placeholder="Ex: 9999 9999 9999 9999" name="cardNo">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
@@ -150,7 +157,7 @@
                             </div>
                             <div class="col-3 form-control">
                                 <label for="cvv">CVV</label>
-                                <input id="cvv" type="number" placeholder="xxx" name="cvv">
+                                <input id="cvv" type="number" placeholder="Ex: 123" name="cvv">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
@@ -158,7 +165,7 @@
                         </div>
                     </div>
                     <div class="form-button col-12">
-                        <button type="submit">Submit</button>
+                        <button type="submit" >Submit</button>
                     </div>
                 </form>
             </div>

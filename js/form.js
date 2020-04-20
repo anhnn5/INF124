@@ -176,8 +176,8 @@
       if(phoneValue === ''){
         setErrorFor(phone, 'Phone Number is required');
       } 
-      else if(!phoneValue.value | phoneValue.length < 11){
-        setErrorFor(phone, 'Can\'t be exceeded 10 numbers')
+      else if(phoneValue.length != 10){
+        setErrorFor(phone, 'Have to be 10 numbers')
       }
       
       else{

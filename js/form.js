@@ -103,8 +103,7 @@
   function  initItems(){
     var productData = JSON.parse(localStorage.getItem('productData'));
     console.log(productData);
-
-     }
+    }
 
 
     document.onreadystatechange = () => {
@@ -177,7 +176,7 @@
         setErrorFor(phone, 'Phone Number is required');
       } 
       else if(phoneValue.length != 10){
-        setErrorFor(phone, 'Have to be 10 numbers')
+        setErrorFor(phone, 'Must be 10 numbers')
       }
       
       else{
@@ -216,6 +215,10 @@
         setErrorFor(zipcode, 'Zip Code is required');
       } 
       
+      else if (zipcodeValue.length != 5){
+        setErrorFor(zipcode, 'Must be 5 digits');
+      } 
+
       else{
         setSuccessFor(zipcode);
       }
@@ -259,17 +262,13 @@
       if(cvvValue === ''){
         setErrorFor(cvv, 'CVV Number is required');
       } 
-      else if(cvvValue.length > 4){
-        setErrorFor(cvv, 'Can\'t be exceeded 3 numbers')
+      else if(cvvValue.length != 3){
+        setErrorFor(cvv, 'Must be 3 digits')
       }
       
       else{
         setSuccessFor(cvv);
       }
-
-
-
-
 
     }
 

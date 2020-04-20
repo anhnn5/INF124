@@ -6,7 +6,6 @@
       
   function  initItems(){
      this.productData = JSON.parse(localStorage.getItem('productData'));
-      console.log(productData)
      var productImage = document.getElementById("productImage");
       productImage.src = "./picture/" + this.productData.imgHref;
       productImage.style = "width:200px;height:250px;";
@@ -56,8 +55,9 @@
                 + "\n Total: " + this.total 
                 + "\n\n Thank you for shopping with us! \n\n JNAH"
                 ;
-      var mailToLink = "mailto:" + email.value.trim() + "?subject=" + encodeURIComponent(subject)  +"&body=" + encodeURIComponent(formattedBody);
-      window.location.href = mailToLink;
+      var mailToLink = "mailto:" + email.value.trim() + "?subject=" + encodeURIComponent(subject)  +"&body=" + encodeURIComponent(formattedBody);      
+      document.location = mailToLink;      
+      window.location.href = "home.html";
     }
     
     const form = document.getElementById('form');
@@ -72,12 +72,42 @@
     const nameOnCard = document.getElementById('nameOnCard');
     const cardNo = document.getElementById('cardNo');
     const exp = document.getElementById('exp');
-    const cvv = document.getElementById('cvv');
+    const cvv = document.getElementById('cvv');  
+    var isFormValid = true  
+
+    var formObject = [      
+      {fieldName: firstName, valid: false},
+      {fieldName: lastName, valid: false},
+      {fieldName: phone, valid: false},
+      {fieldName: email, valid: false},
+      {fieldName: address, valid: false},
+      {fieldName: city, valid: false},
+      {fieldName: state, valid: false},
+      {fieldName: zipcode, valid: false},
+      {fieldName: nameOnCard, valid: false},
+      {fieldName: cardNo, valid: false},
+      {fieldName: exp, valid: false},
+      {fieldName: cvv, valid: false},
+    ]
 
     form.addEventListener('submit', (e) => {
+      //debugger
+      isFormValid = true
       e.preventDefault();
-      checkInputs();
-      openEmail();      
+      checkInputs();     
+      
+      formObject.forEach(item =>{
+        if(!item.valid){
+          isFormValid = false
+        }
+      })
+
+      if(isFormValid){        
+        openEmail()     
+        
+      }      
+            
+      
     });
 
     function checkInputs(){
@@ -93,7 +123,7 @@
       const cardNoValue = cardNo.value.trim();
       const expValue = exp.value.trim();
       const cvvValue = cvv.value.trim();
-
+      
       //FIRSTNAME
       if(firstNameValue === ''){
         setErrorFor(firstName, 'First Name is required');
@@ -191,10 +221,9 @@
       if(cardNoValue === ''){
         setErrorFor(cardNo, 'Card Number is required');
       } 
-      else if(cardNoValue.length > 17){
-        setErrorFor(cardNo, 'Can\'t be exceeded 16 numbers')
-      }
-      
+      else if(cardNoValue.length != 16){
+        setErrorFor(cardNo, 'Card number must be 16 digits')
+      }      
       else{
         setSuccessFor(cardNo);
       }
@@ -233,10 +262,20 @@
 
       //add error class
       formControl.className = 'form-control error';
+      formObject.forEach(item =>{
+        if(item.fieldName == input){
+          item.valid = false;
+        }
+      })
 
     }
 
     function setSuccessFor(input) {
       const formControl = input.parentElement;
       formControl.className = 'form-control success';
+      formObject.forEach(item =>{
+        if(item.fieldName == input){
+          item.valid = true;
+        }
+      })
     }

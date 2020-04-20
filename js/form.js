@@ -1,126 +1,66 @@
 
   (function () {
-      var itemList = 
-      [
-        {
-          "id": 1,
-          "name": "Blazer",
-          "description": "Straight-cut Blazer",
-          "imgHref": "./blazer.jfif",
-          "price": "33.99",
-          "quantity": "10"
-        },
-        {
-          "id": 2,
-          "name": "Blouse",
-          "description": "Wide-cut Blouse",
-          "imgHref": "./blouse.jfif",
-          "price": "14.99",
-          "quantity": "7"
-        },
-        {
-          "id": 3,
-          "name": "Croptop",
-          "description": "Tie-back Top",
-          "imgHref": "./croptop.jfif",
-          "price": "10.99",
-          "quantity": "8"
-        },
-        {
-          "id": 4,
-          "name": "Dress",
-          "description": "Short Denim Dress",
-          "imgHref": "./dress.jfif",
-          "price": "89.99",
-          "quantity": "3"
-        },
-        {
-          "id": 5,
-          "name": "Hoodie",
-          "description": "Pullover Hoodie",
-          "imgHref": "./hoodie.jfif",
-          "price": "49.99",
-          "quantity": "5"
-        },
-        {
-          "id": 6,
-          "name": "Jacket",
-          "description": "Distressed Denim Jean Jacket",
-          "imgHref": "./jacket.jfif",
-          "price": "99.99",
-          "quantity": "24"
-        },
-        {
-          "id": 7,
-          "name": "Jean",
-          "description": "Fashion Jean",
-          "imgHref": "./jean.jfif",
-          "price": "39.99",
-          "quantity": "15"
-        },
-        {
-          "id": 8,
-          "name": "Pant",
-          "description": "Paper-bag Pant",
-          "imgHref": "./pant.jfif",
-          "price": "29.99",
-          "quantity": "10"
-        },
-        {
-          "id": 9,
-          "name": "Accessories",
-          "description": "Soft Scarf",
-          "imgHref": "./scarf.jfif",
-          "price": "9.99",
-          "quantity": "12"
-        },
-        {
-          "id": 10,
-          "name": "Sweater",
-          "description": "Sweater with Dolman Sleeves",
-          "imgHref": "./sweater.jfif",
-          "price": "3.99",
-          "quantity": "10"
-        },
-        {
-          "id": 11,
-          "name": "Tshirt",
-          "description": "T-shirt in soft jersey",
-          "imgHref": "./tshirt.jfif",
-          "price": "18.99",
-          "quantity": "12"
-        },
-        {
-          "id": 12,
-          "name": "Skirt",
-          "description": "Short Jersey Skirt",
-          "imgHref": "./skirt.jfif",
-          "price": "27.99",
-          "quantity": "20"
-        }
-      ];
 
+    let productData;
+    var total;
+      
   function  initItems(){
-    var productData = JSON.parse(localStorage.getItem('productData'));
-    console.log(productData);
-    }
+     this.productData = JSON.parse(localStorage.getItem('productData'));
+      console.log(this.productData);
+        var itemName = document.getElementById("itemName");
+        itemName.textContent = this.productData.name;
+        
+        var itemQuantity = document.getElementById("itemQuantity");
+        itemQuantity.textContent = this.productData.quantity;
 
+        var itemPrice = document.getElementById("itemPrice");
+        itemPrice.textContent = "$" + this.productData.price;
+
+        var shippingPrice = document.getElementById("option").value;
+        var itemShippingPrice = document.getElementById("shippingMethod");
+        itemShippingPrice.textContent = "$" + shippingPrice;
+
+        this.total = this.productData.quantity*this.productData.price + parseInt(shippingPrice);
+        document.getElementById("total").textContent = "$" + this.total;
+
+     } 
 
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {        
         initItems();        
     }
-    };
-
-   
+    };  
 
     })();
 
+    function getShippingPrice(){  
+      var shippingPrice = document.getElementById("option").value;
+      var itemShippingPrice = document.getElementById("shippingMethod");
+      itemShippingPrice.textContent = shippingPrice;
+
+      this.total = this.productData.quantity*this.productData.price + parseInt(shippingPrice);
+      document.getElementById("total").textContent = "$" + this.total;
+    }
+
+    function openEmail(){
+      var subject = "JNAH Order Confirmation"
+      var formattedBody = "Hi, \n\n"
+                + "Here is the confirmation of your order: "
+                + "\n Item: \t" + this.productData.name
+                + "\n Quantity: " + this.productData.quantity
+                + "\n Price: " + this.productData.price
+                + "\n Total: " + this.total 
+                + "\n\n Thank you for shopping with us! \n\n JNAH"
+                ;
+      var mailToLink = "mailto:" + email.value.trim() + "?subject=" + encodeURIComponent(subject)  +"&body=" + encodeURIComponent(formattedBody);
+      window.location.href = mailToLink;
+    }
     
     const form = document.getElementById('form');
     const firstName = document.getElementById('firstName');
     const lastName = document.getElementById('lastName');
     const phone = document.getElementById('phone');
+    const email = document.getElementById('email');
     const address = document.getElementById('address');
     const city = document.getElementById('city');
     const state = document.getElementById('state');
@@ -132,14 +72,15 @@
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
       checkInputs();
+      openEmail();      
     });
 
     function checkInputs(){
       const firstNameValue = firstName.value.trim();
       const lastNameValue = lastName.value.trim();
       const phoneValue = phone.value.trim();
+      const emailValue = email.value.trim();
       const addressValue = address.value.trim();
       const cityValue = city.value.trim();
       const stateValue = state.value.trim();
@@ -183,6 +124,18 @@
         setSuccessFor(phone);
       }
       
+      //EMAIL
+      var emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      if(emailValue === ''){
+        setErrorFor(email, 'Email is required');
+      } 
+      else if(!emailRegEx.test(String(emailValue).toLowerCase())){        
+        setErrorFor(email, 'Email is invalid.')
+      }      
+      else{
+        setSuccessFor(email);
+      }
+
       //ADDRESS
       if(addressValue === ''){
         setErrorFor(address, 'Shipping Address is required');
@@ -215,10 +168,6 @@
         setErrorFor(zipcode, 'Zip Code is required');
       } 
       
-      else if (zipcodeValue.length != 5){
-        setErrorFor(zipcode, 'Must be 5 digits');
-      } 
-
       else{
         setSuccessFor(zipcode);
       }
@@ -262,14 +211,13 @@
       if(cvvValue === ''){
         setErrorFor(cvv, 'CVV Number is required');
       } 
-      else if(cvvValue.length != 3){
+      else if(cvvValue.length > 4){
         setErrorFor(cvv, 'Must be 3 digits')
       }
       
       else{
         setSuccessFor(cvv);
       }
-
     }
 
     function setErrorFor(input, message){

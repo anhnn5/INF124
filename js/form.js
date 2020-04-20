@@ -6,22 +6,26 @@
       
   function  initItems(){
      this.productData = JSON.parse(localStorage.getItem('productData'));
-      console.log(this.productData);
-        var itemName = document.getElementById("itemName");
-        itemName.textContent = this.productData.name;
+      console.log(productData)
+     var productImage = document.getElementById("productImage");
+      productImage.src = "./picture/" + this.productData.imgHref;
+      productImage.style = "width:200px;height:250px;";
         
-        var itemQuantity = document.getElementById("itemQuantity");
-        itemQuantity.textContent = this.productData.quantity;
+      var itemName = document.getElementById("itemName");
+      itemName.textContent = this.productData.name;
+      
+      var itemQuantity = document.getElementById("itemQuantity");
+      itemQuantity.textContent = this.productData.quantity;
 
-        var itemPrice = document.getElementById("itemPrice");
-        itemPrice.textContent = "$" + this.productData.price;
+      var itemPrice = document.getElementById("itemPrice");
+      itemPrice.textContent = "$" + this.productData.price;
 
-        var shippingPrice = document.getElementById("option").value;
-        var itemShippingPrice = document.getElementById("shippingMethod");
-        itemShippingPrice.textContent = "$" + shippingPrice;
+      var shippingPrice = document.getElementById("option").value;
+      var itemShippingPrice = document.getElementById("shippingMethod");
+      itemShippingPrice.textContent = "$" + shippingPrice;
 
-        this.total = this.productData.quantity*this.productData.price + parseInt(shippingPrice);
-        document.getElementById("total").textContent = "$" + this.total;
+      this.total = (this.productData.price*this.productData.quantity + parseInt(shippingPrice)).toString().substring(0,5);
+      document.getElementById("total").textContent = "$" + this.total;
 
      } 
 
@@ -38,7 +42,7 @@
       var itemShippingPrice = document.getElementById("shippingMethod");
       itemShippingPrice.textContent = shippingPrice;
 
-      this.total = this.productData.quantity*this.productData.price + parseInt(shippingPrice);
+      this.total = (this.productData.price*this.productData.quantity + parseInt(shippingPrice)).toString().substring(0,5);      
       document.getElementById("total").textContent = "$" + this.total;
     }
 
@@ -236,8 +240,3 @@
       const formControl = input.parentElement;
       formControl.className = 'form-control success';
     }
-
-
-    
-    
-    

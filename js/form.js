@@ -1,3 +1,4 @@
+
   (function () {
       var itemList = 
       [
@@ -103,65 +104,8 @@
     var productData = JSON.parse(localStorage.getItem('productData'));
     console.log(productData);
 
+     }
 
-    var x = document.getElementsByClassName('form_order');
-    var createform = document.createElement('form');
-    createform.setAttribute("action", "");
-    createform.setAttribute("method", "post");
-    x.appendChild(createform);
-
-    var heading = document.createElement('h2');
-    heading.innerHTML = "Order Form";
-    createform.appendChild(heading);
-
-    var line = document.createElement('hr');
-    createform.appendChild(line);
-
-    var linebreak = document.createElement('br');
-    createform.appendChild(linebreak);
-
-    var namelabel = document.createElement('label');
-    namelabel.innerHTML = "Your Name: ";
-    createform.appendChild(namelabel);
-
-    var inputelement = document.createElement('input');
-    inputelement.setAttribute("type", "text");
-    inputelement.setAttribute("name","dname");
-    createform.appendChild(inputelement);
-
-    var linebreak = document.createElement('br');
-    createform.appendChild(linebreak);
-
-    var emaillabel = document.createElement('label'); // Create Label for E-mail Field
-    emaillabel.innerHTML = "Your Email : ";
-    createform.appendChild(emaillabel);
-
-    var emailelement = document.createElement('input'); // Create Input Field for E-mail
-    emailelement.setAttribute("type", "text");
-    emailelement.setAttribute("name", "demail");
-    createform.appendChild(emailelement);
-
-    var emailbreak = document.createElement('br');
-    createform.appendChild(emailbreak);
-
-    var messagelabel = document.createElement('label'); // Append Textarea
-    messagelabel.innerHTML = "Your Message : ";
-    createform.appendChild(messagelabel);
-
-    var texareaelement = document.createElement('textarea');
-    texareaelement.setAttribute("name", "dmessage");
-    createform.appendChild(texareaelement);
-
-    var messagebreak = document.createElement('br');
-    createform.appendChild(messagebreak);
-
-    var submitelement = document.createElement('input'); // Append Submit Button
-    submitelement.setAttribute("type", "submit");
-    submitelement.setAttribute("name", "dsubmit");
-    submitelement.setAttribute("value", "Submit");
-    createform.appendChild(submitelement);
-
-    }
 
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {        
@@ -169,5 +113,184 @@
     }
     };
 
+   
+
     })();
 
+    
+    const form = document.getElementById('form');
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    const phone = document.getElementById('phone');
+    const address = document.getElementById('address');
+    const city = document.getElementById('city');
+    const state = document.getElementById('state');
+    const zipcode = document.getElementById('zipcode');
+    const nameOnCard = document.getElementById('nameOnCard');
+    const cardNo = document.getElementById('cardNo');
+    const exp = document.getElementById('exp');
+    const cvv = document.getElementById('cvv');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      checkInputs();
+    });
+
+    function checkInputs(){
+      const firstNameValue = firstName.value.trim();
+      const lastNameValue = lastName.value.trim();
+      const phoneValue = phone.value.trim();
+      const addressValue = address.value.trim();
+      const cityValue = city.value.trim();
+      const stateValue = state.value.trim();
+      const zipcodeValue = zipcode.value.trim();
+      const nameOnCardValue = nameOnCard.value.trim();
+      const cardNoValue = cardNo.value.trim();
+      const expValue = exp.value.trim();
+      const cvvValue = cvv.value.trim();
+
+      //FIRSTNAME
+      if(firstNameValue === ''){
+        setErrorFor(firstName, 'First Name is required');
+      } 
+      else if(firstNameValue.length < 3 | firstNameValue.length > 20){
+        setErrorFor(firstName, 'At least 3 characters and NOT exceed 20 characters!')
+      }
+      else{
+        setSuccessFor(firstName);
+      }
+
+      //LASTNAME
+      if(lastNameValue === ''){
+        setErrorFor(lastName, 'Last Name is required');
+      }
+      else if(lastNameValue.length < 3 | lastNameValue.length > 20){
+        setErrorFor(lastName, 'At least 3 characters and NOT exceed 20 characters!')
+      }
+      else{
+        setSuccessFor(lastName);
+      }
+
+      //PHONE
+      if(phoneValue === ''){
+        setErrorFor(phone, 'Phone Number is required');
+      } 
+      else if(!phoneValue.value | phoneValue.length < 11){
+        setErrorFor(phone, 'Can\'t be exceeded 10 numbers')
+      }
+      
+      else{
+        setSuccessFor(phone);
+      }
+      
+      //ADDRESS
+      if(addressValue === ''){
+        setErrorFor(address, 'Shipping Address is required');
+      } 
+      
+      else{
+        setSuccessFor(address);
+      }
+
+      //CITY
+      if(cityValue === ''){
+        setErrorFor(city, 'City is required');
+      } 
+      
+      else{
+        setSuccessFor(city);
+      }
+
+      //STATE
+      if(stateValue === ''){
+        setErrorFor(state, 'State is required');
+      } 
+      
+      else{
+        setSuccessFor(state);
+      }
+
+      //ZIPCODE
+      if(zipcodeValue === ''){
+        setErrorFor(zipcode, 'Zip Code is required');
+      } 
+      
+      else{
+        setSuccessFor(zipcode);
+      }
+
+      //NAME ON CARD
+      if(nameOnCardValue === ''){
+        setErrorFor(nameOnCard, 'Name On Card is required');
+      } 
+      else if(nameOnCardValue.length < 3 | nameOnCardValue.length > 20){
+        setErrorFor(nameOnCard, 'At least 3 characters and NOT exceed 20 characters!')
+      }
+      else{
+        setSuccessFor(nameOnCard);
+      }
+
+      //CARD NUMBER
+      if(cardNoValue === ''){
+        setErrorFor(cardNo, 'Card Number is required');
+      } 
+      else if(cardNoValue.length > 17){
+        setErrorFor(cardNo, 'Can\'t be exceeded 16 numbers')
+      }
+      
+      else{
+        setSuccessFor(cardNo);
+      }
+
+      //EXP DATE
+      if(expValue === ''){
+        setErrorFor(exp, 'Expiration Date is required');
+      } 
+      else if(expValue.length > 6){
+        setErrorFor(exp, 'Must be mm/yy')
+      }
+      
+      else{
+        setSuccessFor(exp);
+      }
+
+      //CVV
+      if(cvvValue === ''){
+        setErrorFor(cvv, 'CVV Number is required');
+      } 
+      else if(cvvValue.length > 4){
+        setErrorFor(cvv, 'Can\'t be exceeded 3 numbers')
+      }
+      
+      else{
+        setSuccessFor(cvv);
+      }
+
+
+
+
+
+    }
+
+    function setErrorFor(input, message){
+      const formControl = input.parentElement;
+      const small = formControl.querySelector('small');
+
+      //add error message inside small
+      small.innerText = message;
+
+      //add error class
+      formControl.className = 'form-control error';
+
+    }
+
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+      formControl.className = 'form-control success';
+    }
+
+
+    
+    
+    

@@ -6,7 +6,7 @@ TEAM MEMBERS:
 
 
 DEPLOYED URL:
-
+http://circinus-20.ics.uci.edu:8080/project1/INF124/home.html?fbclid=IwAR2y13hWz85xMtm0Izgt5TXNM-34ti51fBrHycSEipKzHRRzf_9MarZWshA
 
 ========================================================================================================================================================
 

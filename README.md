@@ -2,11 +2,11 @@ TEAM MEMBERS:
 - Jonathan Hoang Tran - 20843397
 - Nina Nha Vuong - 59752042
 - Anh Nguyen - 49209878
-- Huy Luong - 
+- Huy Luong - 16558665
 
 
 DEPLOYED URL:
-http://circinus-20.ics.uci.edu:8080/project1/INF124/home.html?fbclid=IwAR2y13hWz85xMtm0Izgt5TXNM-34ti51fBrHycSEipKzHRRzf_9MarZWshA
+http://circinus-20.ics.uci.edu:8080/project1/INF124/home.html
 
 ========================================================================================================================================================
 
